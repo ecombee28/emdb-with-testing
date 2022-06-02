@@ -8,7 +8,7 @@ This application uses the TMDB(The movie database) API together with all of its 
 
 ![](/Images/Main.png)
 
-When a title is clicked on you will be able to view details of that selected movie. You will see the rating, year, genre, trailer, plot, and even recommended movies all from the TMDB api.
+When a title is clicked on you will be abled to view details of that selected movie. You will see the rating, year, genre, trailer, plot, and even recommended movies all from the TMDB api.
 
 ![](/Images/index.png)
 
@@ -16,7 +16,7 @@ The search function of this application brings you to a landing page that displa
 
 ![](/Images/search.png)
 
-The user can also create and login to their account. When the use has logged in, they can then save movies to their watch list. 
+The user can also create and login to their account. When the use has logged in, they can then save movies to their watch list.
 
 ![](/Images/login.png)
 
@@ -29,4 +29,5 @@ I used the Next.js framework to build this application. The application is also 
 I am still fairly new to react and next.js frameworks so by building this application it has grown my knowledge of client-side rendering vs server-side rendering. I was also able to continue to learn and develop my skills in HTML, CSS, Javascript, and working with API's.
 
 # Live site
+
 https://emdb.live/
