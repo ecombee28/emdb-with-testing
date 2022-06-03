@@ -31,19 +31,13 @@ const login = ({ changeView }) => {
     let userValPass = false;
     let passValPass = false;
 
-    if (uLen > 12) {
-      userValPass = false;
-      setUserInput(false);
-      setUserError("Username can't exceed 12 characters");
-    } else if (uLen > 3 && uLen <= 12) {
+    if (uLen > 3 && uLen <= 12) {
       userValPass = true;
       setUserInput(true);
     } else {
       userValPass = false;
       setUserInput(false);
-      if (uLen >= 0 && uLen <= 3) {
-        setUserError("Username must be at least 4 characters");
-      }
+      setUserError("Username must be between 4 and 12 characters");
     }
 
     if (pLen > 5) {
@@ -114,13 +108,16 @@ const login = ({ changeView }) => {
             <input
               type="text"
               name="username"
+              data-testid="userName-input"
               value={userNameInput}
               required
               className={style.input}
               onChange={updateName}
             />
           </div>
-          <p className={style.error}>{!passInput ? passError : null}</p>
+          <p data-testid="pass-error-txt" className={style.error}>
+            {!passInput ? passError : null}
+          </p>
           <div className={style.input_wrapper}>
             <span>
               <label>Password</label>
@@ -128,7 +125,8 @@ const login = ({ changeView }) => {
             </span>
             <input
               type="password"
-              name="username"
+              name="password"
+              data-testid="password-input"
               required
               value={password}
               className={style.input}
@@ -138,7 +136,12 @@ const login = ({ changeView }) => {
           <label className={`${style.invalid_login}`}>
             {error ? JSON.parse(localStorage.getItem("error_message")) : null}
           </label>
-          <button className={style.submit_btn} onClick={handleValidation}>
+          <button
+            name="submit-btn"
+            role="button"
+            className={style.submit_btn}
+            onClick={handleValidation}
+          >
             Sign In
             {loading && (
               <img src="/loading.gif" alt="" className={style.loader} />

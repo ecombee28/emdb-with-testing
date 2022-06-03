@@ -5,7 +5,7 @@ import searchStyles from "../styles/Search.module.css";
 import Link from "next/link";
 import axios from "axios";
 
-const search = () => {
+export default function Search() {
   const [movies, setMovies] = useState(false);
   const [searchComponent, setSearchComponent] = useState(false);
 
@@ -51,6 +51,7 @@ const search = () => {
         <input
           type="text"
           id="input"
+          data-testid="search-input"
           placeholder="Search by movie or show title"
           className={searchStyles.input}
           onKeyUp={check}
@@ -62,6 +63,7 @@ const search = () => {
         <>
           <h1
             id="search_title"
+            data-testid="search-result-title"
             className={`${searchStyles.title} ${searchStyles.title_container}`}
           >
             {`Search Results for: ${title}`}
@@ -75,6 +77,7 @@ const search = () => {
         <>
           <h1
             id="title"
+            data-testid="main-title"
             className={`${searchStyles.title} ${searchStyles.title_container}`}
           >
             {title}
@@ -133,6 +136,4 @@ const search = () => {
       )}
     </div>
   );
-};
-
-export default search;
+}
