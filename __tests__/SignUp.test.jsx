@@ -5,7 +5,7 @@ import { store } from "../app/store";
 import userEvent from "@testing-library/user-event";
 
 describe("testing sign up component", () => {
-  test("submitting with a bad username ", async () => {
+  test("submitting with a empty and invalid username ", async () => {
     render(
       <Provider store={store}>
         <SignUp changeView={"signup"} />
@@ -23,6 +23,7 @@ describe("testing sign up component", () => {
     fireEvent.change(usernameInput, { target: { value: blankUserName } });
     expect(usernameInput.value).toMatch(blankUserName);
 
+    //entered in a password to isolate the username input
     fireEvent.change(passwordInput, { target: { value: password } });
     expect(passwordInput.value).toMatch(password);
 
