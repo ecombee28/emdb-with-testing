@@ -43,19 +43,13 @@ const login = ({ changeView }) => {
     let passValPass = false;
     let conPassValPass = false;
 
-    if (uLen > 12) {
-      userValPass = false;
-      setUserInput(false);
-      setUserError("Username can't exceed 12 characters");
-    } else if (uLen > 3 && uLen <= 12) {
+    if (uLen > 3 && uLen <= 12) {
       userValPass = true;
       setUserInput(true);
     } else {
       userValPass = false;
       setUserInput(false);
-      if (uLen >= 0 && uLen <= 3) {
-        setUserError("Username must be at least 4 characters");
-      }
+      setUserError("Username must be between 4 and 12 characters long");
     }
     if (pLen > 5) {
       if (password !== confirmPassword) {
@@ -148,6 +142,7 @@ const login = ({ changeView }) => {
             <input
               type="text"
               name="username"
+              data-testid="userName-input"
               value={userNameInput}
               required
               className={style.input}
@@ -163,6 +158,7 @@ const login = ({ changeView }) => {
             <input
               type="password"
               name="password"
+              data-testid="password-input"
               required
               value={password}
               className={style.input}
