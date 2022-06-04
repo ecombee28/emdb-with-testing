@@ -20,7 +20,7 @@ import {
   getImdbRatings,
 } from "../../api/api";
 
-const movieInfo = ({ countNumber, movie, trailer, recommended, cast }) => {
+const MovieInfo = ({ countNumber, movie, trailer, recommended, cast }) => {
   const id = Cookies.get("id");
   const [showTrailer, setShowTrailer] = useState(false);
   const [imdb, setImdb] = useState([]);
@@ -183,4 +183,4 @@ export async function getServerSideProps(context) {
   };
 }
 
-export default movieInfo;
+export default MovieInfo;

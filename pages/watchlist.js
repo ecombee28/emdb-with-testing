@@ -47,7 +47,9 @@ export default function Watchlist() {
               You have to be signed in to see your WatchList.
               <br />
               <Link href="/login">
-                <p className={style.link}>Sign In</p>
+                <button data-testid="signin-btn" className={style.link}>
+                  Sign In
+                </button>
               </Link>
             </span>
           </h1>

@@ -126,8 +126,8 @@ describe("testing sign up component", () => {
     userEvent.click(signInTextLink);
 
     await waitFor(() => {
-      const noPassError = screen.getByRole("heading", "Sign In");
-      expect(noPassError).toBeInTheDocument();
+      const heading = screen.getByRole("heading", "Sign In");
+      expect(heading).toBeInTheDocument();
     });
   });
 });

@@ -37,6 +37,9 @@
 
 .link {
     color: var(--white);
+    background-color: transparent;
+    font-size: 1.8rem;
+    font-weight: 500;
     cursor: pointer;
 }
 
@@ -72,6 +75,7 @@
         padding-bottom: 120px;
         justify-content: center;
     }
+
     .empty_list {
         font-size: 1rem;
         position: absolute;
@@ -79,6 +83,7 @@
         left: 50%;
         transform: translate(-50%, -45%);
     }
+
     .icons {
         width: 15%;
         font-size: 2rem;
@@ -94,6 +99,7 @@
         transform: translate(-50%, -45%);
         margin-bottom: 40px;
     }
+
     .icons {
         width: 8%;
         font-size: 2rem;
