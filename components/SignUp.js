@@ -106,7 +106,7 @@ const login = ({ changeView }) => {
         }
       });
 
-    const addUser = (id, username, avatar, movies) => {
+    const addUser = (id, username, movies) => {
       dispatch(setUserId(id));
       dispatch(loginUser(username));
 
@@ -173,6 +173,7 @@ const login = ({ changeView }) => {
             <input
               type="password"
               name="cPassword"
+              data-testid="confirm-password-input"
               required
               value={confirmPassword}
               className={style.input}
@@ -190,7 +191,11 @@ const login = ({ changeView }) => {
           </button>
           <div className={style.signup_wrapper}>
             <p className={style.signup_txt}>All ready a member?</p>
-            <p className={style.signup} onClick={() => changeView("login")}>
+            <p
+              data-testid="signin-text"
+              className={style.signup}
+              onClick={() => changeView("login")}
+            >
               Sign In
             </p>
           </div>

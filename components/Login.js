@@ -149,7 +149,11 @@ const login = ({ changeView }) => {
           </button>
           <div className={style.signup_wrapper}>
             <p className={style.signup_txt}>New to EMDB?</p>
-            <p className={style.signup} onClick={() => changeView("signup")}>
+            <p
+              data-testid="signup-text"
+              className={style.signup}
+              onClick={() => changeView("signup")}
+            >
               Sign Up Now
             </p>
           </div>
